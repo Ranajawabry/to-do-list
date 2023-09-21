@@ -5,4 +5,12 @@ this project only run on browsers that support local storge.
 <br>
 <br>
 <img src="https://github.com/Ranajawabry/toDoList/assets/121602339/c0595e90-d135-48d7-b9a9-0ed6d9bb99e6" width ="700" height="500"/>
+<br> <br> <br> 
+## Built By 
+* HTML5
+* CSS
+* Bootstrap [https://getbootstrap.com/docs/5.0/getting-started/introduction/]
+*  Java Scipt
+
+
 
