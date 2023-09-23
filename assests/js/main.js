@@ -30,6 +30,14 @@ const display = () => {
         task.value = "";
     },
     addTask = (t) => {
+        console.log(t);
+        console.log(tasks);
+
+        if(tasks.find((e)=>{ return e.name=== t.name; })) {
+          
+            window.alert('this task is alredy exist');
+        }
+        else{
         tasks.push(t),
             localStorage.setItem("tasks", JSON.stringify(tasks)),
             Toastify({
@@ -43,14 +51,21 @@ const display = () => {
                 stopOnFocus: !0,
                 style: { background: "linear-gradient(to right, #00b09b, #96c93d)" },
                 onClick: function () {},
-            }).showToast(),
+            }).showToast()
+            }
             clear(),
-            display();
+           display();
     };
-add.addEventListener("click", (t) => {
-    t.preventDefault();
-    t = { name: task.value, status: "progress" };
-    addTask(t);
+    const slugify = (name)=>{
+        name = name.toLowerCase();
+        name=name.replace(/ /g,'-');
+        return name;
+
+    }
+add.addEventListener("click", (e) => {
+    e.preventDefault();
+    const newTask = { name: task.value , slug : slugify(task.value) , status: "progress" };
+    addTask(newTask);
 }),
     getTasks.addEventListener("click", (t) => {
         t.preventDefault(), display();
